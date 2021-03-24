@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PaginationControls from "./paginationControls";
 import Pokemon from "./Pokemon";
+import classes from './PokeList.module.css'
 
 // https://pokeapi.co/docs/v2
 
@@ -40,15 +41,15 @@ const PokeList = () => {
   };
 
   return (
-    <div>
+    <div className={classes.root}>
       <h1>PokeList</h1>
-      <ul>
+      <div className={classes.pokemonList}>
         {pokemonList.map((pokemon) => {
           return (
             <Pokemon key={pokemon.name} name={pokemon.name} url={pokemon.url} />
           );
         })}
-      </ul>
+      </div>
       <PaginationControls
         onNextHandler={onNextHandler}
         onPrevHandler={onPrevHandler}

@@ -18,8 +18,9 @@ const Pokemon: React.FC<Props> = ({ name, url}) => {
 
   return (
     <div className={classes.root}>
-      {name} : <a href={url}>More Info</a>
+      <h2 className={classes.name}>{name}</h2> 
       <img src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt={`${name} alt text`} />
+      <p><a href={url}>More Info</a></p>
     </div>
   );
 };

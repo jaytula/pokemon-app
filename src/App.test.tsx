@@ -19,10 +19,14 @@ describe("Pokemon.tsx", () => {
     );
   });
 
-  test("renders an image of the right pokemon", () => {
+  test("renders an image of the right pokemon", async () => {
     const wrapper = render(
       <Pokemon name="bulbasaur" url={"https://pokeapi.co/api/v2/pokemon/1/"} />
     );
-    const imageElem = wrapper.getByAltText("bulbasaur alt text");
+    const imageElem = wrapper.getByAltText("bulbasaur alt text") as HTMLImageElement;
+    expect(imageElem.src).toBe('https://pokeres.bastionbot.org/images/pokemon/1.png')
+
+    // const imageElem2 = await wrapper.findByAltText('bulbasaur alt text') as HTMLImageElement
+    // expect(imageElem2.src).toBe('https://pokeres.bastionbot.org/images/pokemon/1.png')
   });
 });
