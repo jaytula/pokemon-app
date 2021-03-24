@@ -10,7 +10,7 @@ const paginationControls: React.FC<Props> = ({
   onPrevHandler,
 }) => {
   return (
-    <div>
+    <div style={{marginLeft: 16}}>
       <button onClick={onPrevHandler}>Prev</button>
       <button onClick={onNextHandler}>Next</button>
     </div>

@@ -40,7 +40,7 @@ const PokeList = () => {
 
   return (
     <div className={classes.root}>
-      <h1>PokeList</h1>
+      <h1 style={{textAlign: 'center', fontFamily: 'fantasy'}}>PokeList App</h1>
       <div className={classes.pokemonList}>
         {pokemonList.map((pokemon) => {
           return (
@@ -52,7 +52,7 @@ const PokeList = () => {
         onNextHandler={onNextHandler}
         onPrevHandler={onPrevHandler}
       />
-      <p>
+      <p style={{marginLeft: 16}}>
         Page: {page + 1} of {numPages}
       </p>
     </div>

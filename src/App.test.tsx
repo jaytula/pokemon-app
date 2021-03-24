@@ -3,6 +3,7 @@ import {
   findByAltText,
   getByAltText,
   getByRole,
+  getByText,
   render,
   screen,
 } from "@testing-library/react";
@@ -30,3 +31,12 @@ describe("Pokemon.tsx", () => {
     // expect(imageElem2.src).toBe('https://pokeres.bastionbot.org/images/pokemon/1.png')
   });
 });
+
+describe("App.tsx", () => {
+  test('h1 is centered', () => {
+    const wrapper = render(<App />);
+    const titleElem = wrapper.getByText('PokeList App');
+
+    expect(titleElem).toHaveStyle({textAlign: 'center'})
+  })
+})
