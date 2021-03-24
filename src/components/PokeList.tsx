@@ -17,12 +17,10 @@ const PokeList = () => {
 
   useEffect(() => {
     // URLSearchParams
-    console.log({ page });
     const searchParams = new URLSearchParams();
     searchParams.set("limit", LIMIT.toString());
     searchParams.set("offset", (LIMIT * page).toString());
     const params = searchParams.toString();
-    console.log('params' + params)
 
     fetch(`${POKEAPI_ENDPOINT}?${params}`)
       .then((res) => res.json())
