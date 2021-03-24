@@ -16,11 +16,9 @@ const Pokemon: React.FC<Props> = ({name, url}) => {
         .then(data => {
           setInfo(data);
         })
-    })
+    }, [url])
     return <div className={classes.root}>
-      <pre>
-        {JSON.stringify(info, null, 2)}
-      </pre>
+      {name} : <a href={url}>More Info</a>
     </div>
 }
 
