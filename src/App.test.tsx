@@ -10,6 +10,7 @@ import {
 import App from "./App";
 import { extractPokemonURL } from "./components/Pokemon";
 import Pokemon from "./components/Pokemon";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Pokemon.tsx", () => {
   test("extracts the url from the params", () => {
@@ -22,7 +23,9 @@ describe("Pokemon.tsx", () => {
 
   test("renders an image of the right pokemon", async () => {
     const wrapper = render(
-      <Pokemon name="bulbasaur" url={"https://pokeapi.co/api/v2/pokemon/1/"} />
+      <BrowserRouter>
+        <Pokemon name="bulbasaur" url={"https://pokeapi.co/api/v2/pokemon/1/"} />
+      </BrowserRouter>
     );
     const imageElem = wrapper.getByAltText("bulbasaur alt text") as HTMLImageElement;
     expect(imageElem.src).toBe('https://pokeres.bastionbot.org/images/pokemon/1.png')
@@ -36,7 +39,6 @@ describe("App.tsx", () => {
   test('h1 is centered', () => {
     const wrapper = render(<App />);
     const titleElem = wrapper.getByText('PokeList App');
-
     expect(titleElem).toHaveStyle({textAlign: 'center'})
   })
 })

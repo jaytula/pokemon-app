@@ -1,4 +1,5 @@
 import React from "react";
+import { Link  } from 'react-router-dom'
 import classes from "./Pokemon.module.css";
 
 interface Props {
@@ -20,7 +21,7 @@ const Pokemon: React.FC<Props> = ({ name, url}) => {
     <div className={classes.root}>
       <h2 className={classes.name}>{name}</h2> 
       <img src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt={`${name} alt text`} />
-      <p><a href={url}>More Info</a></p>
+      <p><Link to={`/${id}`}>More Info</Link></p>
     </div>
   );
 };
